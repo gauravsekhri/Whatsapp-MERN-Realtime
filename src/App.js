@@ -24,17 +24,6 @@ function App() {
       })
   }, [])
 
-  function dec2hex (dec) {
-    return dec.toString(16).padStart(2, "0")
-  }
-  
-  function generateId (len) {
-    var arr = new Uint8Array((len || 40) / 2)
-    window.crypto.getRandomValues(arr)
-    return Array.from(arr, dec2hex).join('')
-  }
-  //console.log("id ",generateId(10))
-
   useEffect(() => {
     //once
     var pusher = new Pusher('4a530750d0da4a287e56', {
@@ -60,16 +49,6 @@ function App() {
   console.log("messages", messages);
 
   const [username, setUsername] = useState(null);
-
-  const getUser = (data) => {
-    setUsername(data);
-  }
-
-  const [useruid, setUseruid] = useState(null);
-
-  const getUserUID = (x) => {
-    setUseruid(x);
-  }
 
   const getUserData = (x) => {
     setUsername(x.uname);

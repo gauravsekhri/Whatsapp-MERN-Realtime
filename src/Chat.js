@@ -12,27 +12,10 @@ function Chat({ messages, username, rooms }) {
 
     const [input, setInput] = useState("");
 
-    const newChat = async (e)=>{
-        e.preventDefault();
-        await axios.post("/allrooms/create", {
-            toUser : input,
-            messageList : [{
-                    msgText : "It is working",
-                    recieved : true
-            }]
-        })
-        .then(x => {
-            if(x.status === 200){
-                let items = document.querySelector(".chat_body");
-                items.scrollTop = items.scrollHeight;
-            }
-        })   
-    };
-
     var roomName = "";
 
     for(var i=0; i<rooms[0].Users.length; i++){
-        if(rooms[0].Users[i] != username){
+        if(rooms[0].Users[i] !== username){
             roomName = rooms[0].Users[i];
         }
     }
@@ -41,7 +24,7 @@ function Chat({ messages, username, rooms }) {
         e.preventDefault();
         var msg = input.trim();
         if(msg.length>0){
-            var newUpdate = messages.push({msgText : input.trim(), from : username})
+            messages.push({msgText : input.trim(), from : username})
             await axios.put("/allrooms/update/a1b2c3", 
                 messages
             )
@@ -82,7 +65,7 @@ function Chat({ messages, username, rooms }) {
             <div className="chat_body">
 
                 { messages.map((message, index) => (
-                    <div key={index} className={`chat_message ${(message.from == username) && "chat_reciever"}`}>
+                    <div key={index} className={`chat_message ${(message.from === username) && "chat_reciever"}`}>
                         {/* <div className="chat_name">name</div> */}
                         {message.msgText}
                         {/* <div className="chat_timestamp">time</div> */}
@@ -99,8 +82,8 @@ function Chat({ messages, username, rooms }) {
                     <input value={input} onChange={e => setInput(e.target.value)} placeholder="Type a Message" type="text"/>
                     <button onClick={sendMessage} type="submit">Send Message</button>
                 </form>
-                <IconButton>
-                    <SendIcon onClick={sendMessage}/>
+                <IconButton onClick={sendMessage}>
+                    <SendIcon/>
                 </IconButton>
             </div>
 

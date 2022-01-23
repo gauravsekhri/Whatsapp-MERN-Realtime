@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Sidebar.css'
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -15,7 +15,7 @@ function Sidebar({messages, username, rooms}){
     var roomName = "";
 
     for(var i=0; i<rooms[0].Users.length; i++){
-        if(rooms[0].Users[i] != username){
+        if(rooms[0].Users[i] !== username){
             roomName = rooms[0].Users[i];
         }
     }
