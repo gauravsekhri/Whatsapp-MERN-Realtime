@@ -26,12 +26,8 @@ app.use(cors());
 //     next();
 // })
 
-// const url = 'mongodb+srv://admin:admin123@cluster0.rn3xr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-// const url = 'mongodb+srv://gaurav:gaurav@cluster0.vgfak.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
-const url = 'mongodb+srv://admin:admin123@cluster0.kevdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-
+//please use your own mongodb connection string, following is a sample string;
+const url = 'mongodb+srv://<username>:<password>@cluster0.kevdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(url, {
     useNewUrlParser: true,
