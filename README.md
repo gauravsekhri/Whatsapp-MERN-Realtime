@@ -13,10 +13,10 @@ Dont forget to add your own mongodb connection string in the server.js file.
 
 ### Account 1
 
-username : elon
+username : elon__
 password : admin1
 
 ### Account 2
 
-username : mark
+username : mark__
 password : admin2
