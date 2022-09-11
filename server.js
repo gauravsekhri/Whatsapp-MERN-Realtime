@@ -28,9 +28,9 @@ app.use(cors());
 
 // const url = 'mongodb+srv://admin:admin123@cluster0.rn3xr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-// const url = 'mongodb+srv://gaurav:gaurav@cluster0.vgfak.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const url = 'mongodb+srv://gaurav:gaurav@cluster0.vgfak.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-const url = 'mongodb+srv://admin:admin123@cluster0.kevdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+// const url = 'mongodb+srv://admin:admin123@cluster0.kevdi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 
 mongoose.connect(url, {
